@@ -1,5 +1,3 @@
-import itertools
-
 N, K = (int(i) for i in input().split())  
 heights = [int(input()) for i in range(N)] 
 
