@@ -2,8 +2,10 @@
 a = int(input())
 
 # 1行に複数の数字：　1 3 5 7
-a, b, c, d = (int(i) for i in input().split())  #a=1, b=3, c=5, d=7
-a = [int(i) for i in input().split()]  #a=[1,3,5,7]
+# a=1, b=3, c=5, d=7
+a, b, c, d = (int(i) for i in input().split())  
+# a=[1,3,5,7]
+a = [int(i) for i in input().split()]  
 
 # 複数行の数字をリスト
 n = int(input()) 
