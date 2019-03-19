@@ -1,3 +1,7 @@
+# 高速版input
+import sys
+input = sys.stdin.readline
+
 # 1行に1つの数字
 a = int(input())
 
