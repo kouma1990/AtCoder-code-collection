@@ -22,16 +22,18 @@ for a_ in a:
         else:
             count_1[i] += 1
 
-x_bin = ""
+#x_bin = ""
+res = 0
 for i in range(k_bins):
-    if count_0[i] > count_1[i]:
-        x_bin = "1" + x_bin
-    else:
-        x_bin = "0" + x_bin
+    res += max(count_0[i], count_1[i])*2**i
+    
+print(res)
 
+"""
 x = int("0b"+x_bin, 0)
 result = 0
 for a_ in a:
     result += a_ ^ x
 print(result)
 
+"""
