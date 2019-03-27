@@ -1,29 +1,25 @@
-#WA
-import copy
 n = int(input())
 a = [int(i) for i in input().split()]
 b = [int(i) for i in input().split()]
+diff = [0]*n
 
-inf = 10**10
+neg = 0
+cnt = 0
+for i in range(n):
+    x = a[i]-b[i]
+    diff[i] = x
+    if x < 0:
+        cnt += 1
+        neg += x
 
-def f(idx, cnt, arr):
-    if idx == n:
-        return cnt
+if sum(diff)<0:
+    print(-1)
+    exit()
 
-    flg = True
-    res = []
-    for i, x in enumerate(arr):
-        if x >= b[idx]:
-            flg=False
-            l = copy.copy(arr)
-            l.pop(i)
-            res.append(f(idx+1, cnt+(0 if x==a[idx] else 1), l))
+for x in sorted(diff, reverse=True):
+    if neg >= 0:
+        break
+    cnt += 1
+    neg += x
 
-    if flg:
-        return inf
-
-    return min(res)
-
-res = f(0,0,a)
-
-print(res)
+print(cnt)
