@@ -13,3 +13,4 @@ ABC 40 C: 基本的な動的計画法(DP)
 ABC119 C: 深さ探索(DFS)
 ABC111 C: Counterオブジェクト
 ABC 75 C: 無向グラフ　橋探索
+ABC 35 C: いもす法
