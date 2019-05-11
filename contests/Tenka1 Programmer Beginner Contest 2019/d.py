@@ -1,23 +1,22 @@
 n = int(input())
 a = [int(input()) for i in range(n)]
 
+dp = [{0:1}]
+
 sum_num = sum(a)
 
-l = [0]
-l2 = [0]
-cnt = 0
 for x in a:
-    c = []
-    c2 = []
-    for idx, l_ in enumerate(l): 
-        if l_+x < sum_num/2:
-            c.append(l_+x)
-            c2.append(l2[idx]+1)
-            cnt += 2**(n-(l2[idx]+1)) -1 
+    dp.append({})
+    for k, v in dp[-2].items():
+        if k in dp[-1]:
+            dp[-1][k] += v
+        else:
+            dp[-1][k] = v
 
-    l += c
-    l2 += c2
+        if k+x in dp[-1]:
+            dp[-1][k+x] += v
+        else:
+            dp[-1][k+x] = v
 
-print(l)
-print(cnt)
+print(dp[-1])
 
